@@ -35,6 +35,7 @@ type VideoContextObject = {
   setFullScreen: (enabled: boolean) => void;
   isMuted: boolean;
   setMuted: (enabled: boolean) => void;
+  isStreamable: boolean;
   setPart: (
     part:
       | { start: number; end: number }
@@ -144,6 +145,7 @@ const Video = ({
       setPlayer,
       setIsPlaying,
       setPart,
+      isStreamable: context.src.endsWith(".m3u8"),
     }),
     [context, isPlaying, player, part, isFullScreen]
   );

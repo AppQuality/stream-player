@@ -4,8 +4,15 @@ import { useVideoContext } from ".";
 
 const ReactHlsPlayer = ({ className }: { className?: string }) => {
   const playerRef = useRef<HTMLVideoElement>(null);
-  const { context, setContext, setIsPlaying, setPlayer, setPart, togglePlay } =
-    useVideoContext();
+  const {
+    context,
+    setContext,
+    setIsPlaying,
+    setPlayer,
+    setPart,
+    togglePlay,
+    isStreamable,
+  } = useVideoContext();
   const { isPlaying, part } = context;
   const { start, end } = part;
 
@@ -58,6 +65,7 @@ const ReactHlsPlayer = ({ className }: { className?: string }) => {
     let hls: Hls;
 
     function _initPlayer() {
+      if (!isStreamable) return;
       if (hls != null) {
         hls.destroy();
       }
@@ -109,7 +117,7 @@ const ReactHlsPlayer = ({ className }: { className?: string }) => {
       onClick={() => togglePlay()}
       className={`${className} ${isPlaying ? "playing" : "paused"}`}
     >
-      {Hls.isSupported() ? (
+      {Hls.isSupported() && isStreamable ? (
         <video ref={playerRef} />
       ) : (
         <video ref={playerRef} src={context.src} />
