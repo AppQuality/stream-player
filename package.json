@@ -4,6 +4,10 @@
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "license": "MIT",
+  "author": {
+    "name": "AppQuality",
+    "email": "it@unguess.io"
+  },
   "dependencies": {
     "hls.js": "^1.4.8"
   },
