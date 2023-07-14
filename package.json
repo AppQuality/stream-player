@@ -1,0 +1,29 @@
+{
+  "name": "@appquality/stream-player",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "license": "MIT",
+  "dependencies": {
+    "hls.js": "^1.4.8"
+  },
+  "scripts": {
+    "release": "yarn run build && yarn publish --access public",
+    "build": "yarn run clean && rollup -c",
+    "clean": "rimraf build"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "react": "^17.0.2",
+    "styled-components": "^5.3.0",
+    "@types/react": "^17.0.2",
+    "@types/styled-components": "^5.1.26",
+    "rimraf": "^5.0.1",
+    "rollup": "^3.26.2",
+    "rollup-plugin-typescript2": "^0.35.0",
+    "typescript": "^5.1.6"
+  }
+}
