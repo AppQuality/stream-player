@@ -1,3 +1,15 @@
+# v1.0.3 (Tue Jul 25 2023)
+
+#### ⚠️ Pushed to `master`
+
+- Update push.yml ([@d-beezee](https://github.com/d-beezee))
+
+#### Authors: 1
+
+- [@d-beezee](https://github.com/d-beezee)
+
+---
+
 # v1.0.2 (Fri Jul 14 2023)
 
 #### ⚠️ Pushed to `master`
