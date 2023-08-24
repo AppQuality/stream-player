@@ -31,6 +31,7 @@ const PlayPauseButton = ({
   return (
     <button
       className={`${className} ${isPlaying ? "play" : ""}`}
+      type="button"
       onClick={() => togglePlay()}
     >
       {isPlaying ? texts.pause : texts.play}
