@@ -1,3 +1,15 @@
+# v1.0.4 (Thu Aug 24 2023)
+
+#### ⚠️ Pushed to `master`
+
+- refactor(play-pause): add type button to playPause button ([@cannarocks](https://github.com/cannarocks))
+
+#### Authors: 1
+
+- Luca Cannarozzo ([@cannarocks](https://github.com/cannarocks))
+
+---
+
 # v1.0.3 (Tue Jul 25 2023)
 
 #### ⚠️ Pushed to `master`
