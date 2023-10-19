@@ -1,3 +1,15 @@
+# v1.0.5 (Thu Oct 19 2023)
+
+#### 🐛 Bug Fix
+
+- fix(toggle-play): use video.duration to check if end is reached [#1](https://github.com/AppQuality/stream-player/pull/1) ([@cannarocks](https://github.com/cannarocks))
+
+#### Authors: 1
+
+- Luca Cannarozzo ([@cannarocks](https://github.com/cannarocks))
+
+---
+
 # v1.0.4 (Thu Aug 24 2023)
 
 #### ⚠️ Pushed to `master`
