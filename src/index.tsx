@@ -108,6 +108,7 @@ const Video = ({
       togglePlay: () => {
         if (!player?.ref) return;
         const video = player.ref.current!;
+        const endTime = part.end > 0 && part.end < video.duration ? part.end : video.duration;
         if (
           !!(
             video.currentTime > 0 &&
@@ -119,7 +120,7 @@ const Video = ({
           video.pause();
           setIsPlaying(false);
         } else {
-          if (video.currentTime >= part.end) {
+          if (video.currentTime >= endTime) {
             video.currentTime = part.start;
           }
           video.play();
