@@ -72,6 +72,9 @@ const ReactHlsPlayer = ({ className }: { className?: string }) => {
 
       const newHls = new Hls({
         enableWorker: false,
+        xhrSetup: function (xhr) {
+          xhr.withCredentials = true; // do send cookies
+        },
       });
 
       if (playerRef.current != null) {
