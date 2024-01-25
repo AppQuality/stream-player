@@ -1,3 +1,15 @@
+# v1.0.6 (Thu Jan 25 2024)
+
+#### ⚠️ Pushed to `master`
+
+- feat: Send cookies on load ([@d-beezee](https://github.com/d-beezee))
+
+#### Authors: 1
+
+- [@d-beezee](https://github.com/d-beezee)
+
+---
+
 # v1.0.5 (Thu Oct 19 2023)
 
 #### 🐛 Bug Fix
