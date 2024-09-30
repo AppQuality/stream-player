@@ -2,8 +2,16 @@ import Hls from "hls.js";
 import { useEffect, useRef } from "react";
 import { useVideoContext } from ".";
 
-const ReactHlsPlayer = ({ className }: { className?: string }) => {
+const ReactHlsPlayer = ({
+  className,
+  increaseTimePrecision,
+}: {
+  className?: string;
+  increaseTimePrecision?: boolean;
+}) => {
   const playerRef = useRef<HTMLVideoElement>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
   const {
     context,
     setContext,
@@ -18,9 +26,43 @@ const ReactHlsPlayer = ({ className }: { className?: string }) => {
 
   useEffect(() => {
     if (!playerRef.current) return;
-    playerRef.current.addEventListener("loadedmetadata", () => {
-      const player = playerRef?.current;
-      if (!player) return;
+    const player = playerRef.current;
+
+    const handleTimeUpdate = () => {
+      const endTime = end > 0 && end < player.duration ? end : player.duration;
+      setPlayer((prev) =>
+        prev
+          ? {
+              ...prev,
+              currentTime: player.currentTime,
+            }
+          : undefined
+      );
+
+      if (player.currentTime > endTime) {
+        player.pause();
+        setIsPlaying(false);
+      }
+    };
+
+    const startRegularUpdate = () => {
+      intervalRef.current = setInterval(() => {
+        setPlayer((prev) =>
+          prev
+            ? {
+                ...prev,
+                currentTime: player.currentTime,
+              }
+            : undefined
+        );
+      }, 100); // Update every 100 ms
+    };
+
+    const handleStopInterval = () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+
+    player.addEventListener("loadedmetadata", () => {
       const endTime = end > 0 && end < player.duration ? end : player.duration;
       setPlayer({
         ref: playerRef,
@@ -33,21 +75,23 @@ const ReactHlsPlayer = ({ className }: { className?: string }) => {
         end: endTime,
       }));
 
-      player.addEventListener("timeupdate", () => {
-        setPlayer((prev) =>
-          prev
-            ? {
-                ...prev,
-                currentTime: player.currentTime,
-              }
-            : undefined
-        );
-        if (player.currentTime > endTime) {
-          player.pause();
-          setIsPlaying(false);
-        }
-      });
+      player.addEventListener("timeupdate", () => handleTimeUpdate);
+      if (increaseTimePrecision) {
+        player.addEventListener("pause", () => handleStopInterval);
+        player.addEventListener("play", () => startRegularUpdate);
+        player.addEventListener("ended", () => handleStopInterval);
+      }
     });
+
+    return () => {
+      player.removeEventListener("timeupdate", handleTimeUpdate);
+      if (increaseTimePrecision) {
+        player.removeEventListener("pause", handleStopInterval);
+        player.removeEventListener("play", startRegularUpdate);
+        player.removeEventListener("ended", handleStopInterval);
+      }
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
   }, [playerRef, setPlayer, end, start, setPart, setIsPlaying]);
 
   useEffect(() => {
