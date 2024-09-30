@@ -1,3 +1,16 @@
+# v1.0.7 (Mon Sep 30 2024)
+
+#### ⚠️ Pushed to `master`
+
+- feat(ReactHlsPlayer): add support to increased time precision ([@cannarocks](https://github.com/cannarocks))
+- v1.0.100-precision-1 ([@cannarocks](https://github.com/cannarocks))
+
+#### Authors: 1
+
+- Luca Cannarozzo ([@cannarocks](https://github.com/cannarocks))
+
+---
+
 # v1.0.6 (Thu Jan 25 2024)
 
 #### ⚠️ Pushed to `master`
