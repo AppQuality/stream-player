@@ -12,13 +12,16 @@
     "hls.js": "^1.4.8"
   },
   "scripts": {
-    "release": "yarn run build && npx auto shipit --base-branch=master",
-    "build": "yarn run clean && rollup -c",
+    "release": "npm run build && npx auto shipit --base-branch=master",
+    "build": "npm run clean && rollup -c",
     "clean": "rimraf build"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
+    "react": "^18.2.0",
     "styled-components": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=20.17.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.2",
