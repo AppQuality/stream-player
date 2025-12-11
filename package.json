@@ -4,6 +4,7 @@
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "license": "MIT",
+  "url": "https://github.com/AppQuality/stream-player",
   "author": {
     "name": "AppQuality",
     "email": "it@unguess.io"
