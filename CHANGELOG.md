@@ -1,3 +1,34 @@
+# v1.0.7 (Wed Dec 17 2025)
+
+#### 🐛 Bug Fix
+
+- chore: update Node.js version to 24.x in workflow and add .nvmrc file [#3](https://github.com/AppQuality/stream-player/pull/3) ([@d-beezee](https://github.com/d-beezee))
+- Update workflows OIDC [#2](https://github.com/AppQuality/stream-player/pull/2) ([@marcbon](https://github.com/marcbon) [@d-beezee](https://github.com/d-beezee))
+
+#### ⚠️ Pushed to `master`
+
+- chore: update permissions to allow write access for contents in workflow ([@d-beezee](https://github.com/d-beezee))
+- chore: remove NPM_TOKEN from release workflow for security reasons ([@d-beezee](https://github.com/d-beezee))
+- chore: update styled-components to version 6.1.1 in peerDependencies and dependencies ([@d-beezee](https://github.com/d-beezee))
+- chore: remove outdated url field and ensure repository information is correctly specified in package.json ([@d-beezee](https://github.com/d-beezee))
+- add url ([@d-beezee](https://github.com/d-beezee))
+- update lock ([@d-beezee](https://github.com/d-beezee))
+- Bump version to 1.0.102 ([@cannarocks](https://github.com/cannarocks))
+- Revert "feat(ReactHlsPlayer): add support to increased time precision" ([@cannarocks](https://github.com/cannarocks))
+- Bump version to 1.0.101 ([@cannarocks](https://github.com/cannarocks))
+- 1.0.100-precision-2 ([@cannarocks](https://github.com/cannarocks))
+- 1.0.100-precision-1 ([@cannarocks](https://github.com/cannarocks))
+- feat(ReactHlsPlayer): add support to increased time precision ([@cannarocks](https://github.com/cannarocks))
+- v1.0.100-precision-1 ([@cannarocks](https://github.com/cannarocks))
+
+#### Authors: 3
+
+- [@d-beezee](https://github.com/d-beezee)
+- Luca Cannarozzo ([@cannarocks](https://github.com/cannarocks))
+- Marco Bonomo ([@marcbon](https://github.com/marcbon))
+
+---
+
 # v1.0.7 (Mon Sep 30 2024)
 
 #### ⚠️ Pushed to `master`
