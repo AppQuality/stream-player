@@ -1,3 +1,15 @@
+# v1.0.109 (Fri Jan 16 2026)
+
+#### ⚠️ Pushed to `master`
+
+- chore: downgrade styled-components to version 6.3.6 in package.json and package-lock.json ([@d-beezee](https://github.com/d-beezee))
+
+#### Authors: 1
+
+- [@d-beezee](https://github.com/d-beezee)
+
+---
+
 # v1.0.108 (Fri Jan 16 2026)
 
 #### ⚠️ Pushed to `master`
