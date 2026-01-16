@@ -1,3 +1,15 @@
+# v1.0.108 (Fri Jan 16 2026)
+
+#### ⚠️ Pushed to `master`
+
+- chore: update styled-components to version 6.3.8 in package.json and package-lock.json ([@d-beezee](https://github.com/d-beezee))
+
+#### Authors: 1
+
+- [@d-beezee](https://github.com/d-beezee)
+
+---
+
 # v1.0.7 (Wed Dec 17 2025)
 
 #### 🐛 Bug Fix
